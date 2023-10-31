@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Oooh+Baby&display=swap');
+            @import url('https://fonts.googleapis.com/css?family=Graduate&display=swap');
+            body {
+                background-color: black;
+                background-image: url('images/smoke.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: cover;
+            }
+            div#logo-container {
+                position: relative;
+                margin: auto;
+                margin-top: 200px;
+                width: 40%;
+                background-color: #fff;
+            }
+            @media only screen and (max-width: 1000px) {
+                div#logo-container {
+                    scale: 80%;
+                }
+            } 
+            @media only screen and (max-width: 600px) {
+                div#logo-container {
+                    scale: 60%;
+                }
+            } 
+            @media only screen and (max-width: 300px) {
+                div#logo-container {
+                    scale: 40%;
+                }
+            } 
+            div#logo-element-and {
+                font-family: 'Oooh Baby';
+                font-size: 350px;
+                color: #700;
+                position: absolute;
+                top: -80px;
+                left: 130px;
+                z-index: 3;
+            }
+            div.logo-text {
+                position: absolute;
+                color: #fff;
+                z-index: 5;
+            }
+            div#logo-element-cigars {
+                font-family: 'Oooh Baby';
+                font-size: 150px;
+                left: 0;
+            }
+            div#logo-element-sauce {
+                font-family: 'Graduate';
+                font-size: 70px;
+                left: 210px;
+                top: 140px;
+            }
+            div#logo-element-comingsoon {
+                font-family: 'Courier New';
+                font-size: 50px;
+                text-align: center;
+                top: 300px;
+            }
+        </style>
+        <title>Cigars & Sauce</title>
+    </head>
+    <body>
+        <div id="logo-container">
+            <div id="logo-element-and">&amp;</div>
+            <div id="logo-element-cigars" class="logo-text">Cigars</div>
+            <div id="logo-element-sauce" class="logo-text">Sauce</div>
+            <div id="logo-element-comingsoon" class="logo-text">coming soon...</div>
+        </div>
+    </body>
+</html>
