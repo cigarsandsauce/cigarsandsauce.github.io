@@ -30,7 +30,7 @@
 <body class="w3-container">
 
   <div class="table-container w3-responsive">
-    <table class="w3-table-all w3-xlarge w3-hoverable sticky" id="dataTable">
+    <table class="w3-table-all w3-xxlarge w3-hoverable sticky" id="dataTable">
       <thead>
         <tr id="tableHeader"></tr>
       </thead>
@@ -39,8 +39,8 @@
   </div>
 
   <script>
-    const sheetID = '1msi1_exfa5zYe1I6D5Hy4gysqFVFuYQGmrLKOQIASKw'; // Replace with your actual Google Sheet ID
-    const sheetName = 'Stock'; // Replace with your actual tab name (case-sensitive)
+    const sheetID = '1msi1_exfa5zYe1I6D5Hy4gysqFVFuYQGmrLKOQIASKw';
+    const sheetName = 'Stock';
     const url = `https://opensheet.elk.sh/${sheetID}/${sheetName}`;
 
     fetch(url)
