@@ -41,6 +41,10 @@
     table td, table th {
       white-space: nowrap;
     }
+
+    .line-through {
+      text-decoration: line-through;
+    }
   </style>
 </head>
 <body class="w3-container">
@@ -78,7 +82,7 @@
         data.forEach(row => {
           const tr = document.createElement('tr');
           if (row['Stock'] === '0') {
-            tr.classList.add('w3-text-red', 'w3-line-through');
+            tr.classList.add('w3-text-red', 'line-through');
           }
           headers.forEach((h, i) => {
             const td = document.createElement('td');
