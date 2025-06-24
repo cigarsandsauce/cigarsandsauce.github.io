@@ -2,10 +2,9 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Filtered Table from Google Sheet</title>
+  <title>Cigar Stock List</title>
 </head>
 <body>
-  <h2>Selected Table</h2>
   <table border="1" id="dataTable">
     <thead><tr id="tableHeader"></tr></thead>
     <tbody id="tableBody"></tbody>
@@ -19,10 +18,7 @@
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        // Example: show only rows 2 to 6 (JavaScript index 1 to 5)
-        const filteredRows = data.slice(1, 6);
 
-        // Example: Only show Name and City columns
         const selectedHeaders = ['Item', 'Price', 'Stock'];
         
         // Render headers
@@ -35,7 +31,7 @@
 
         // Render rows
         const tableBody = document.getElementById('tableBody');
-        filteredRows.forEach(row => {
+        data.forEach(row => {
           const tr = document.createElement('tr');
           selectedHeaders.forEach(h => {
             const td = document.createElement('td');
