@@ -78,7 +78,7 @@
 
         const tableBody = document.getElementById('tableBody');
         data.forEach(row => {
-          if (row['Box'] === '') return;
+          if (row['Box'] === '0') return;
           const tr = document.createElement('tr');
           if (row['Stock'] === '0') {
             tr.classList.add('w3-text-red', 'line-through');
