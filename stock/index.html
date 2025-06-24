@@ -56,22 +56,23 @@
       .then(data => {
         if (!data || data.length === 0) return;
 
-        // Limit to first 3 keys (columns)
-        const headers = Object.keys(data[0]).slice(0, 3);
+        const headers = Object.keys(data[0]).slice(0, 3); // First 3 columns
 
         const headerRow = document.getElementById('tableHeader');
-        headers.forEach(h => {
+        headers.forEach((h, i) => {
           const th = document.createElement('th');
           th.textContent = h;
+          if (i === 1 || i === 2) th.classList.add('w3-right-align');
           headerRow.appendChild(th);
         });
 
         const tableBody = document.getElementById('tableBody');
         data.forEach(row => {
           const tr = document.createElement('tr');
-          headers.forEach(h => {
+          headers.forEach((h, i) => {
             const td = document.createElement('td');
             td.textContent = row[h] || '';
+            if (i === 1 || i === 2) td.classList.add('w3-right-align');
             tr.appendChild(td);
           });
           tableBody.appendChild(tr);
