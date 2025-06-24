@@ -69,13 +69,15 @@
         const tableBody = document.getElementById('tableBody');
         data.forEach(row => {
           const tr = document.createElement('tr');
+          if (row['Stock'] === '0') {
+            tr.classList.add('w3-text-red');
+          }
           headers.forEach((h, i) => {
             const td = document.createElement('td');
             td.textContent = row[h] || '';
             if (i === 1 || i === 2) td.classList.add('w3-right-align');
             tr.appendChild(td);
           });
-          if (headers['Stock'] == '0') tr.classList.add('w3-text-red');
           tableBody.appendChild(tr);
         });
       })
