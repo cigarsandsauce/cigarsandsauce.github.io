@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Filtered Table from Google Sheet</title>
+</head>
+<body>
+  <h2>Selected Table</h2>
+  <table border="1" id="dataTable">
+    <thead><tr id="tableHeader"></tr></thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+
+  <script>
+    const sheetID = '1msi1_exfa5zYe1I6D5Hy4gysqFVFuYQGmrLKOQIASKw';
+    const sheetName = 'Stock';
+    const url = `https://opensheet.elk.sh/${sheetID}/${sheetName}`;
+
+    fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        // Example: show only rows 2 to 6 (JavaScript index 1 to 5)
+        const filteredRows = data.slice(1, 6);
+
+        // Example: Only show Name and City columns
+        const selectedHeaders = ['Item', 'Price', 'Stock'];
+        
+        // Render headers
+        const headerRow = document.getElementById('tableHeader');
+        selectedHeaders.forEach(h => {
+          const th = document.createElement('th');
+          th.textContent = h;
+          headerRow.appendChild(th);
+        });
+
+        // Render rows
+        const tableBody = document.getElementById('tableBody');
+        filteredRows.forEach(row => {
+          const tr = document.createElement('tr');
+          selectedHeaders.forEach(h => {
+            const td = document.createElement('td');
+            td.textContent = row[h] || '';
+            tr.appendChild(td);
+          });
+          tableBody.appendChild(tr);
+        });
+      });
+  </script>
+</body>
+</html>
