@@ -70,7 +70,7 @@
         data.forEach(row => {
           const tr = document.createElement('tr');
           if (row['Stock'] === '0') {
-            tr.classList.add('w3-text-red');
+            tr.classList.add('w3-text-red', 'w3-line-through');
           }
           headers.forEach((h, i) => {
             const td = document.createElement('td');
